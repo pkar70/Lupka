@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="Lupka.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lupka"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="uiGrid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Name="uiScroll" ZoomMode="Enabled" MinZoomFactor="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
+            <CaptureElement Name="uiCamera" Stretch="Uniform" RenderTransformOrigin="0.5 0.5"/>
+        </ScrollViewer>
+        <Button Grid.Row="1" HorizontalAlignment="Center" Name="uiStart" Content="Start" />
+    </Grid>
+    
+
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal" >
+            <AppBarButton x:Name="uiAppBarCamera"  Icon="Camera" Label="Camera">
+                <AppBarButton.Flyout>
+                    <MenuFlyout x:Name="uiFlyoutCameras" />
+                    </AppBarButton.Flyout> 
+                </AppBarButton>
+            <AppBarButton x:Name="uiAppBarRotate"  Icon="RotateCamera" Label="Rotate" >
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <ToggleMenuFlyoutItem x:Name="ui90" Text="90°" />
+                        <ToggleMenuFlyoutItem x:Name="ui180" Text="180°" />
+                        <ToggleMenuFlyoutItem x:Name="ui270" Text="270°" />
+                        <ToggleMenuFlyoutItem x:Name="uiMirror" Text="Mirror" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton x:Name="uiTools" Icon="Repair" Label="Tools" IsEnabled="False" >
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:Name="uiPhoto" Text="Photo" />
+                        <!-- <MenuFlyoutItem x:Name="uiStill" Text="Still" /> -->
+                        <MenuFlyoutItem x:Name="uiRecognize" Text="Recognize" />
+                        <!-- <MenuFlyoutSeparator/>
+                        <MenuFlyoutItem Text="About..." Click="uiAbout_Click" /> -->
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton x:Name="uiSettings" Icon="Setting" Label="Settings" IsEnabled="False" Visibility="Collapsed"   >
+            <AppBarButton.Flyout>
+                <MenuFlyout>
+                        <MenuFlyoutItem x:Name="uiSettZoom" Text="Hardware zoom" IsEnabled="False" /> 
+                        <MenuFlyoutItem x:Name="uiSettExpo" Text="Exposure" IsEnabled="False"  />
+                        <MenuFlyoutItem x:Name="uiSettExCom" Text="Compensation" IsEnabled="False" />
+                        <MenuFlyoutItem x:Name="uiSettFocus" Text="Focus" IsEnabled="False" />
+                        <MenuFlyoutItem x:Name="uiSettISO" Text="ISO" IsEnabled="False" />
+                        <MenuFlyoutItem x:Name="uiSettWhite" Text="White balance" IsEnabled="False" />
+                    </MenuFlyout>
+            </AppBarButton.Flyout>
+            </AppBarButton> 
+        </CommandBar>
+    </Page.BottomAppBar>
+
+</Page>
