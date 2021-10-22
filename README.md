@@ -7,6 +7,6 @@
 
 
 # Privacy policy
- http://beskid.geo.uj.edu.pl/p/ms/magnifying-privacy.htm
+ https://github.com/pkar70/Lupka/wiki/Privacy-policy
 
  For history (in Polish), see MainPage.xaml.vb file.
